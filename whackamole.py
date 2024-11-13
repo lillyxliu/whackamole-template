@@ -13,8 +13,6 @@ def redraw_screen(mole_image,screen,color,mole_x,mole_y):
 def main():
     try:
         pygame.init()
-        # You can draw the mole with this snippet:
-        # screen.blit(mole_image, mole_image.get_rect(topleft=(x,y)))
         mole_image = pygame.image.load("mole.png")
         screen = pygame.display.set_mode((640, 512))
         clock = pygame.time.Clock()
@@ -31,14 +29,12 @@ def main():
                     (x,y) = event.pos
                     if mole_x < x< mole_x+32:
                         if mole_y <y < mole_y+32:
-                            print("yeaa")
-                            mole_x, mole_y = random.randint(0, 20)*32, random.randint(0, 16)*32
+                            mole_x, mole_y = random.randint(0, 19)*32, random.randint(0, 15)*32
                             redraw_screen(mole_image, screen, color, mole_x, mole_y)
 
                 pygame.display.flip()
             clock.tick(60)
 
-        #
     finally:
         pygame.quit()
 
